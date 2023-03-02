@@ -62,18 +62,7 @@ EMOJIOS = [
       "🕊",
 ]
       
-STICKER = [
-      STKR,
-      STKR1,
-      STKR2,
-      STKR3,
-      STKR4,
-      STKR5,
-      STKR6,
-      STKR7,
-      STKR8,
-      STKR9,
-]
+
 START = f"""
 **๏ Hey, I am [{Config.BOT_NAME}]({Config.START_IMG1})**
 **➻ ᴀɴ ᴀɪ-ʙᴀsᴇᴅ ᴛᴇᴀᴍ ᴀɢᴏʀᴀ ᴄʜᴀᴛʙᴏᴛ.**
@@ -129,7 +118,7 @@ async def restart(client, m: Message):
     await asyncio.sleep(0.2)
     await accha.delete()
     umm = await m.reply_sticker(
-              sticker = random.choice(STICKER),
+              sticker = Config.STKR,
     )
     await asyncio.sleep(2)
     await umm.delete()
