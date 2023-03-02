@@ -155,11 +155,6 @@ async def restart(client, message):
                         reply_markup= InlineKeyboardMarkup(HELP_BACK),
        )
 
-@bot.on_message(
-    filters.command(["chatbot", f"chatbot@{BOT_USERNAME}"], prefixes=["/", ".", "?", "-"])
-    & ~filters.private)
-async def chatbot(client, message):
-    await message.reply_text(f"**ᴜsᴀɢᴇ:**\n/**chatbot [on/off]**\n**ᴄʜᴀᴛ-ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅ(s) ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘ ᴏɴʟʏ!**")
 
 @bot.on_message(filters.command(["ping","alive"], prefixes=["+", "/", "-", "?", "$", "&"]))
 async def ping(client, message: Message):
@@ -224,6 +219,11 @@ async def chatboton(client, message):
         await message.reply_text(f"ChatBot Enabled!")
     
 
+@bot.on_message(
+    filters.command(["chatbot", f"chatbot@{BOT_USERNAME}"], prefixes=["/", ".", "?", "-"])
+    & ~filters.private)
+async def chatbot(client, message):
+    await message.reply_text(f"**ᴜsᴀɢᴇ:**\n/**chatbot [on/off]**\n**ᴄʜᴀᴛ-ʙᴏᴛ ᴄᴏᴍᴍᴀɴᴅ(s) ᴡᴏʀᴋ ɪɴ ɢʀᴏᴜᴘ ᴏɴʟʏ!**")
 
 
 @bot.on_message(
