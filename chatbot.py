@@ -234,9 +234,7 @@ async def chatbot(client, message):
     & ~filters.private
     & ~filters.bot,
 )
-async def legenda
-
-i(client: Client, message: Message):
+async def legendai(client: Client, message: Message):
 
    chatdb = MongoClient(MONGO_URL)
    chatai = chatdb["Word"]["WordDb"]   
