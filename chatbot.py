@@ -86,7 +86,7 @@ DEV_OP = [
         InlineKeyboardButton(text="🚀 Helps & Cmds 🚀", callback_data="HELP"),
     ],
     [
-        InlineKeyboardButton(text="❄️ Source Code ❄️", url=f"https://LEGEND-AI/LEGEND-CHAT"),
+        InlineKeyboardButton(text="❄️ Source Code ❄️", url=f"https://github.com/LEGEND-AI/LEGEND-CHAT"),
         InlineKeyboardButton(text="☁️ Updates ☁️", url=f"https://t.me/LegendBot_AI"),
     ],
 ]
@@ -123,7 +123,7 @@ async def restart(client, m: Message):
     await asyncio.sleep(2)
     await umm.delete()
     await m.reply_photo(
-        photo = random.choice(PHOTO),
+        photo = Config.START_IMG1,
         caption=f"""**๏ ʜᴇʏ, ɪ ᴀᴍ [{Config.BOT_NAME}](t.me/{Config.BOT_USERNAME})**\n**➻ ᴀɴ ᴀɪ-ʙᴀsᴇᴅ ᴄʜᴀᴛʙᴏᴛ.**\n**──────────────────**\n**➻ ᴜsᴀɢᴇ /chatbot [on/off]**\n**๏ ᴛᴏ ɢᴇᴛ ʜᴇʟᴘ ᴜsᴇ /help**""",
         reply_markup=InlineKeyboardMarkup(DEV_OP),
     )
