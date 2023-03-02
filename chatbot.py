@@ -190,9 +190,9 @@ async def chatbotofd(client, message):
             )
     is_legend = legend.find_one({"chat_id": message.chat.id})
     if not is_legend:
-        agora.insert_one({"chat_id": message.chat.id})
+        legend.insert_one({"chat_id": message.chat.id})
         await message.reply_text(f"Chatbot Disabled!")
-    if is_agora:
+    if is_legend:
         await message.reply_text(f"ChatBot Already Disabled")
     
 
@@ -215,7 +215,7 @@ async def chatboton(client, message):
     if not is_legend:           
         await message.reply_text(f"Chatbot Already Enabled")
     if is_legend:
-        agora.delete_one({"chat_id": message.chat.id})
+        legend.delete_one({"chat_id": message.chat.id})
         await message.reply_text(f"ChatBot Enabled!")
     
 
@@ -234,7 +234,9 @@ async def chatbot(client, message):
     & ~filters.private
     & ~filters.bot,
 )
-async def agoraai(client: Client, message: Message):
+async def legenda
+
+i(client: Client, message: Message):
 
    chatdb = MongoClient(MONGO_URL)
    chatai = chatdb["Word"]["WordDb"]   
