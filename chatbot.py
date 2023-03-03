@@ -8,6 +8,8 @@ import re
 import asyncio
 import time
 from datetime import datetime
+from googletrans import Translator
+
 
 ENV = bool(os.environ.get("ENV", False))
 
@@ -35,6 +37,24 @@ async def is_admins(chat_id: int):
         )
     ]
 
+
+
+
+async def getTranslate(text, **kwargs):
+    translator = Translator()
+    result = None
+    for _ in range(10):
+        try:
+            result = translator.translate(text, **kwargs)
+        except Exception:
+            translator = Translator()
+            await sleep(0.1)
+    return result
+
+
+def soft_deEmojify(inputString: str) -> str:
+    """Remove emojis and other non-safe characters from string"""
+    return get_emoji_regexp().sub("", inputString)
 
 PHOTO = [
     Config.START_IMG1,
@@ -280,7 +300,12 @@ async def legendai(client: Client, message: Message):
                    if Yo == "sticker":
                        await message.reply_sticker(f"{hey}")
                    if not Yo == "sticker":
-                       await message.reply_text(f"{hey}")
+                     text = soft_deEmojify(hey.strip())
+                     lan = en.strip()
+                    try:
+                        translated = await getTranslate(text, dest=lan)
+                        after_tr_text = translated.text
+                        await message.reply_text(f"{after_tr_text}")
        if not message.reply_to_message.from_user.id == bot_id:          
            if message.sticker:
                is_chat = chatai.find_one({"word": message.reply_to_message.text, "id": message.sticker.file_unique_id})
