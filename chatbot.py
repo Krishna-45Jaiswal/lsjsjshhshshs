@@ -423,7 +423,7 @@ async def vickprivate(client: Client, message: Message):
            lan = lan.strip()
            translated = await getTranslate(text, dest=lan)
            after_tr_text = translated.text
-           betu = [f"{hey}" f"{after_tr_text}"]
+           betu = f"{hey} {after_tr_text}"
            llol = [x for x in betu.split()]
            IPIC = random.choice(llol)
            await message.reply_text(f"{IPIC}")
