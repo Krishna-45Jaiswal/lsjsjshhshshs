@@ -300,12 +300,11 @@ async def legendai(client: Client, message: Message):
                    if Yo == "sticker":
                        await message.reply_sticker(f"{hey}")
                    if not Yo == "sticker":
-                     text = soft_deEmojify(hey.strip())
-                     lan = en.strip()
-                    try:
-                        translated = await getTranslate(text, dest=lan)
-                        after_tr_text = translated.text
-                        await message.reply_text(f"{after_tr_text}")
+                       text = soft_deEmojify(hey.strip())
+                       lan = en.strip()
+                       translated = await getTranslate(text, dest=lan)
+                       after_tr_text = translated.text
+                       await message.reply_text(f"{after_tr_text}")
        if not message.reply_to_message.from_user.id == bot_id:          
            if message.sticker:
                is_chat = chatai.find_one({"word": message.reply_to_message.text, "id": message.sticker.file_unique_id})
