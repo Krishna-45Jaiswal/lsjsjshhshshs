@@ -56,19 +56,6 @@ def soft_deEmojify(inputString: str) -> str:
     """Remove emojis and other non-safe characters from string"""
     return emoji.get_emoji_regexp().sub("", inputString)
 
-PHOTO = [
-    Config.START_IMG1,
-    Config.START_IMG2,
-    Config.START_IMG3,
-    Config.START_IMG4,
-    Config.START_IMG5,
-    Config.START_IMG6,
-    Config.START_IMG7,
-    Config.START_IMG8,
-    Config.START_IMG9,
-    Config.START_IMG10,
-]
-
 EMOJIOS = [ 
       "💣",
       "💥",
