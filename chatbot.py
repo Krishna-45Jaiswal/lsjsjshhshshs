@@ -423,7 +423,9 @@ async def vickprivate(client: Client, message: Message):
            lan = lan.strip()
            translated = await getTranslate(text, dest=lan)
            after_tr_text = translated.text
-           await message.reply_text(f"{after_tr_text}")
+           betu = "hey after_tr_text"
+           llol = [x for x in betu.split()]
+           await message.reply_text(f"{llol}")
    if message.reply_to_message:            
        getme = await bot.get_me()
        bot_id = getme.id       
