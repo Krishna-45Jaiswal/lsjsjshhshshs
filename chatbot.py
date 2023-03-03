@@ -10,6 +10,7 @@ import time
 from datetime import datetime
 from googletrans import Translator
 import emoji
+LANG = os.environ.get("LANGUAGE", "hi")
 
 ENV = bool(os.environ.get("ENV", False))
 
@@ -265,10 +266,14 @@ async def legendai(client: Client, message: Message):
                    await message.reply_sticker(f"{hey}")
                if not Yo == "sticker":
                    text = soft_deEmojify(hey.strip())
-                   lan = en.strip()
+                   lan = LANG
+                   lan = lan.strip()
                    translated = await getTranslate(text, dest=lan)
                    after_tr_text = translated.text
-                   await message.reply_text(f"{after_tr_text}")
+                   betu = f"{hey} {after_tr_text}"
+                   llol = [x for x in betu.split()]
+                   IPIC = random.choice(llol)
+                   await message.reply_text(f"{IPIC}")
    if message.reply_to_message:  
        legenddb = MongoClient(MONGO_URL)
        legend = legenddb["LegendDb"]["Legend"] 
@@ -291,10 +296,14 @@ async def legendai(client: Client, message: Message):
                        await message.reply_sticker(f"{hey}")
                    if not Yo == "sticker":
                        text = soft_deEmojify(hey.strip())
-                       lan = hi.strip()
+                       lan = LANG
+                       lan = lan.strip()
                        translated = await getTranslate(text, dest=lan)
                        after_tr_text = translated.text
-                       await message.reply_text(f"{after_tr_text}")
+                       betu = f"{hey} {after_tr_text}"
+                       llol = [x for x in betu.split()]
+                       IPIC = random.choice(llol)
+                       await message.reply_text(f"{IPIC}")
        if not message.reply_to_message.from_user.id == bot_id:          
            if message.sticker:
                is_chat = chatai.find_one({"word": message.reply_to_message.text, "id": message.sticker.file_unique_id})
@@ -336,10 +345,14 @@ async def legendstickerai(client: Client, message: Message):
                Yo = is_text['check']
                if Yo == "text":
                    text = soft_deEmojify(hey.strip())
-                   lan = en.strip()
+                   lan = LANG
+                   lan = lan.strip()
                    translated = await getTranslate(text, dest=lan)
                    after_tr_text = translated.text
-                   await message.reply_text(f"{after_tr_text}")
+                   betu = f"{hey} {after_tr_text}"
+                   llol = [x for x in betu.split()]
+                   IPIC = random.choice(llol)
+           await message.reply_text(f"{IPIC}")
                if not Yo == "text":
                    await message.reply_sticker(f"{hey}")
    
@@ -363,10 +376,14 @@ async def legendstickerai(client: Client, message: Message):
                    Yo = is_text['check']
                    if Yo == "text":
                        text = soft_deEmojify(hey.strip())
-                       lan = hi.strip()
+                       lan = LANG
+                       lan = lan.strip()
                        translated = await getTranslate(text, dest=lan)
                        after_tr_text = translated.text
-                       await message.reply_text(f"{after_tr_text}")
+                       betu = f"{hey} {after_tr_text}"
+                       llol = [x for x in betu.split()]
+                       IPIC = random.choice(llol)
+                       await message.reply_text(f"{IPIC}")
                    if not Yo == "text":
                        await message.reply_sticker(f"{hey}")
        if not message.reply_to_message.from_user.id == bot_id:          
@@ -406,7 +423,7 @@ async def vickprivate(client: Client, message: Message):
            await message.reply_sticker(f"{hey}")
        if not Yo == "sticker":
            text = soft_deEmojify(hey.strip())
-           lan = "kn"
+           lan = LANG
            lan = lan.strip()
            translated = await getTranslate(text, dest=lan)
            after_tr_text = translated.text
@@ -430,10 +447,14 @@ async def vickprivate(client: Client, message: Message):
                await message.reply_sticker(f"{hey}")
            if not Yo == "sticker":
                text = soft_deEmojify(hey.strip())
-               lan = hi.strip()
+               lan = LANG
+               lan = lan.strip()
                translated = await getTranslate(text, dest=lan)
                after_tr_text = translated.text
-               await message.reply_text(f"{after_tr_text}")
+               betu = f"{hey} {after_tr_text}"
+               llol = [x for x in betu.split()]
+               IPIC = random.choice(llol)
+               await message.reply_text(f"{IPIC}")
        
 
 @bot.on_message(
@@ -459,10 +480,14 @@ async def vickprivatesticker(client: Client, message: Message):
        Yo = is_text['check']
        if Yo == "text":
            text = soft_deEmojify(hey.strip())
-           lan = hi.strip()
+           lan = LANG
+           lan = lan.strip()
            translated = await getTranslate(text, dest=lan)
            after_tr_text = translated.text
-           await message.reply_text(f"{after_tr_text}")
+           betu = f"{hey} {after_tr_text}"
+           llol = [x for x in betu.split()]
+           IPIC = random.choice(llol)
+           await message.reply_text(f"{IPIC}")
        if not Yo == "text":
            await message.reply_sticker(f"{hey}")
    if message.reply_to_message:            
@@ -479,10 +504,14 @@ async def vickprivatesticker(client: Client, message: Message):
            Yo = is_text['check']
            if Yo == "text":
                text = soft_deEmojify(hey.strip())
-               lan = hi.strip()
-               translated = await getTranslate(text, dest=lan)
-               after_tr_text = translated.text
-               await message.reply_text(f"{after_tr_text}")
+              lan = LANG
+              lan = lan.strip()
+              translated = await getTranslate(text, dest=lan)
+              after_tr_text = translated.text
+              betu = f"{hey} {after_tr_text}"
+              llol = [x for x in betu.split()]
+              IPIC = random.choice(llol)
+              await message.reply_text(f"{IPIC}")
            if not Yo == "text":
                await message.reply_sticker(f"{hey}")
 
