@@ -419,7 +419,8 @@ async def vickprivate(client: Client, message: Message):
            await message.reply_sticker(f"{hey}")
        if not Yo == "sticker":
            text = soft_deEmojify(hey.strip())
-           lan = hi.strip()
+           lan = "hi"
+           lan = lan.strip()
            translated = await getTranslate(text, dest=lan)
            after_tr_text = translated.text
            await message.reply_text(f"{after_tr_text}")
