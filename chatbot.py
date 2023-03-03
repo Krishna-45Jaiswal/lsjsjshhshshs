@@ -9,7 +9,7 @@ import asyncio
 import time
 from datetime import datetime
 from googletrans import Translator
-
+import emoji
 
 ENV = bool(os.environ.get("ENV", False))
 
@@ -54,7 +54,7 @@ async def getTranslate(text, **kwargs):
 
 def soft_deEmojify(inputString: str) -> str:
     """Remove emojis and other non-safe characters from string"""
-    return get_emoji_regexp().sub("", inputString)
+    return emoji.get_emoji_regexp().sub("", inputString)
 
 PHOTO = [
     Config.START_IMG1,
