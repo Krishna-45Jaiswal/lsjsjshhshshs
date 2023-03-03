@@ -277,8 +277,11 @@ async def legendai(client: Client, message: Message):
                if Yo == "sticker":
                    await message.reply_sticker(f"{hey}")
                if not Yo == "sticker":
-                   await message.reply_text(f"{hey}")
-   
+                   text = soft_deEmojify(hey.strip())
+                   lan = en.strip()
+                   translated = await getTranslate(text, dest=lan)
+                   after_tr_text = translated.text
+                   await message.reply_text(f"{after_tr_text}")
    if message.reply_to_message:  
        legenddb = MongoClient(MONGO_URL)
        legend = legenddb["LegendDb"]["Legend"] 
@@ -301,7 +304,7 @@ async def legendai(client: Client, message: Message):
                        await message.reply_sticker(f"{hey}")
                    if not Yo == "sticker":
                        text = soft_deEmojify(hey.strip())
-                       lan = en.strip()
+                       lan = hi.strip()
                        translated = await getTranslate(text, dest=lan)
                        after_tr_text = translated.text
                        await message.reply_text(f"{after_tr_text}")
@@ -345,7 +348,11 @@ async def legendstickerai(client: Client, message: Message):
                is_text = chatai.find_one({"text": hey})
                Yo = is_text['check']
                if Yo == "text":
-                   await message.reply_text(f"{hey}")
+                   text = soft_deEmojify(hey.strip())
+                   lan = en.strip()
+                   translated = await getTranslate(text, dest=lan)
+                   after_tr_text = translated.text
+                   await message.reply_text(f"{after_tr_text}")
                if not Yo == "text":
                    await message.reply_sticker(f"{hey}")
    
@@ -368,7 +375,11 @@ async def legendstickerai(client: Client, message: Message):
                    is_text = chatai.find_one({"text": hey})
                    Yo = is_text['check']
                    if Yo == "text":
-                       await message.reply_text(f"{hey}")
+                       text = soft_deEmojify(hey.strip())
+                       lan = hi.strip()
+                       translated = await getTranslate(text, dest=lan)
+                       after_tr_text = translated.text
+                       await message.reply_text(f"{after_tr_text}")
                    if not Yo == "text":
                        await message.reply_sticker(f"{hey}")
        if not message.reply_to_message.from_user.id == bot_id:          
@@ -407,7 +418,11 @@ async def vickprivate(client: Client, message: Message):
        if Yo == "sticker":
            await message.reply_sticker(f"{hey}")
        if not Yo == "sticker":
-           await message.reply_text(f"{hey}")
+           text = soft_deEmojify(hey.strip())
+           lan = hi.strip()
+           translated = await getTranslate(text, dest=lan)
+           after_tr_text = translated.text
+           await message.reply_text(f"{after_tr_text}")
    if message.reply_to_message:            
        getme = await bot.get_me()
        bot_id = getme.id       
@@ -423,7 +438,11 @@ async def vickprivate(client: Client, message: Message):
            if Yo == "sticker":
                await message.reply_sticker(f"{hey}")
            if not Yo == "sticker":
-               await message.reply_text(f"{hey}")
+               text = soft_deEmojify(hey.strip())
+               lan = hi.strip()
+               translated = await getTranslate(text, dest=lan)
+               after_tr_text = translated.text
+               await message.reply_text(f"{after_tr_text}")
        
 
 @bot.on_message(
@@ -448,7 +467,11 @@ async def vickprivatesticker(client: Client, message: Message):
        is_text = chatai.find_one({"text": hey})
        Yo = is_text['check']
        if Yo == "text":
-           await message.reply_text(f"{hey}")
+           text = soft_deEmojify(hey.strip())
+           lan = hi.strip()
+           translated = await getTranslate(text, dest=lan)
+           after_tr_text = translated.text
+           await message.reply_text(f"{after_tr_text}")
        if not Yo == "text":
            await message.reply_sticker(f"{hey}")
    if message.reply_to_message:            
@@ -464,7 +487,11 @@ async def vickprivatesticker(client: Client, message: Message):
            is_text = chatai.find_one({"text": hey})
            Yo = is_text['check']
            if Yo == "text":
-               await message.reply_text(f"{hey}")
+               text = soft_deEmojify(hey.strip())
+               lan = hi.strip()
+               translated = await getTranslate(text, dest=lan)
+               after_tr_text = translated.text
+               await message.reply_text(f"{after_tr_text}")
            if not Yo == "text":
                await message.reply_sticker(f"{hey}")
 
