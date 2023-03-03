@@ -6,3 +6,4 @@ tgcrypto==1.2.2
 asyncio
 git+https://github.com/ITS-LEGENDBOT/py-googletrans
 emoji==1.7.0
+httpx[http2]
