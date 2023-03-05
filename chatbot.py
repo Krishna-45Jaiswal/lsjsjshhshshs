@@ -352,7 +352,7 @@ async def legendstickerai(client: Client, message: Message):
                    betu = f"{hey} {after_tr_text}"
                    llol = [x for x in betu.split()]
                    IPIC = random.choice(llol)
-           await message.reply_text(f"{IPIC}")
+                   await message.reply_text(f"{IPIC}")
                if not Yo == "text":
                    await message.reply_sticker(f"{hey}")
    
