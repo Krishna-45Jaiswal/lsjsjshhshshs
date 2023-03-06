@@ -503,7 +503,7 @@ async def vickprivatesticker(client: Client, message: Message):
            is_text = chatai.find_one({"text": hey})
            Yo = is_text['check']
            if Yo == "text":
-               text = soft_deEmojify(hey.strip())
+              text = soft_deEmojify(hey.strip())
               lan = LANG
               lan = lan.strip()
               translated = await getTranslate(text, dest=lan)
