@@ -35,10 +35,6 @@
             "description": "Sticker for start ",
             "required": true
         },
- 
-          
-
-    
         "START_IMG": {
             "description": "Start Image For Bot.",
             "required": true
