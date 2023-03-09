@@ -4,7 +4,6 @@
   "logo": "https://telegra.ph/file/ac9bd7bcdac984dd407b2.jpg",
   "keywords": [
     "plugin",
-    "legendbot",
     "modular",
     "productivity"
   ],
@@ -13,7 +12,12 @@
         "BOT_TOKEN": {
             "description": "telegram bot token here",
             "required": true
-        },        
+        },    
+       "ENV": {
+            "description": "Put anything here",
+            "required": true
+            "value": "ANYTHING"
+        },      
         "MONGO_URL": {
             "description": "mongo db url here",
             "required": true
@@ -27,10 +31,9 @@
             "required": true
         },
         "BOT_NAME": {
-            "description": "Simple Bot-name. Do not use Modified Text..",
+            "description": "Simple Copy Bot Name. Do not use Modified Text..",
             "required": true
         },
-
         "STKR": {
             "description": "Sticker for start ",
             "required": true
