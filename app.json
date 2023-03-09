@@ -8,7 +8,7 @@
     "productivity"
   ],
   "repository": "https://github.com/LEGEND-AI/LEGEND-CHAT",   
-    "env": {
+  "env": {
         "BOT_TOKEN": {
             "description": "telegram bot token here",
             "required": true
@@ -16,7 +16,6 @@
        "ENV": {
             "description": "Put anything here",
             "required": true
-            "value": "ANYTHING"
         },      
         "MONGO_URL": {
             "description": "mongo db url here",
