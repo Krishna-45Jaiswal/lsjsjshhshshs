@@ -13,7 +13,7 @@
             "description": "telegram bot token here",
             "required": true
         },    
-       "ENV": {
+        "ENV": {
             "description": "Put anything here",
             "required": true
         },      
